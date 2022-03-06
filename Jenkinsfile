@@ -18,4 +18,15 @@ pipeline {
             }
         }
     }
+    post{
+        always{
+            echo "this is a msg from always Block"
+        }
+        success{
+            echo "successfully completed"
+        }
+        failure{
+            echo("failed")
+        }
+    }
 }
