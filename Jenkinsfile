@@ -15,6 +15,7 @@ pipeline {
          stage("deploy") {
             steps{
                 echo("deploying the app")
+                throw new Exception("Failed to deploy")
             }
         }
     }
