@@ -8,6 +8,9 @@ pipeline {
             }
         }
         stage("test") {
+            when{
+                BRANCH_NAME == "dev"
+            }
             steps{
                 echo("testing the app")
             }
@@ -15,7 +18,6 @@ pipeline {
          stage("deploy") {
             steps{
                 echo("deploying the app")
-                throw new Exception("Failed to deploy")
             }
         }
     }
